@@ -40,12 +40,79 @@ html, body{
 }
 
 /*// ELEMENTS TO ANIMATE //*/
+.mario {
+  display: block;
+  width: 60px;
+  height: 70px;
+  position: absolute;
+  top: -30px;
+  left: 0;
+  animation: drive 3s both infinite linear, jump 0.3s 1.2s ease;
+}
 
+.luigi {
+  display: block;
+  width: 70px; 
+  height: 80px;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  animation: drive 5s infinite both linear;
+}
+
+.cloud {
+  position: absolute;
+}
+
+.cloud:nth-child(1) {
+  width: 200px;
+  top: 120px;
+  opacity: 0.5;
+  animation: 25s linear 2s infinite alternate-reverse wind;
+}
+
+.cloud:nth-child(2) {
+  width: 300px;
+  top: 0;
+  animation: 20s linear 2s infinite alternate wind;
+}
 
 
 /*// KEYFRAMES //*/
 
+@keyframes drive {
+  from {
+    transform: translateX(-200px);
+  }
 
+  to {
+    transform: translateX(1200px);
+  } 
+}
+
+@keyframes wind {
+  from {
+    left: -300px;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes jump {
+  0% { 
+    top: -30px;
+  }
+
+  50% {
+    top: -90px;
+  }
+
+  100% {
+    top: -30px;
+  }
+}
 
 
 
